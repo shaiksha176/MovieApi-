@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>MovieInfo</title>
+  <script src="./movie.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="./pagination.js"></script>
+  <script src="./config.js"></script>
+  <script type="text/javascript" src="./jquery.simplePagination.js"></script>
+  <style>
+    .movie_list {
+      background: #424242;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">MovieInfo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+      aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            TV series
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#" class="info" id="tv_popular">Popular</a>
+            <a class="dropdown-item" href="#" class="info" id="tv_top_rated">Top Rated</a>
+            <a class="dropdown-item" href="#" class="info">Up Coming</a>
+            <a class="dropdown-item" href="#" class="info" id="tv_latest">Latest</a>
+            <a class="dropdown-item" href="#" class="info" id="tv_airing_today">Now Playing</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#trending" class="info" id="trending">Trending</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Movies
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#movie_popular" id="popular">Popular</a>
+            <a class="dropdown-item" href="#" id="top_rated">Top Rated</a>
+            <a class="dropdown-item" href="#" class="info" id="upcoming">Up Coming</a>
+            <a class="dropdown-item" href="#" class="info" id="latest">Latest</a>
+            <a class="dropdown-item" href="#" class="info" id="now_playing">Now Playing</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" />
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
+    </div>
+  </nav>
+  <section class="movie_list" id="trending">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#page1" id="1">1</a></li>
+        <li class="page-item"><a class="page-link" href="#page2" id="2">2</a></li>
+        <li class="page-item"><a class="page-link" href="#page3" id="3">3</a></li>
+        <li class="page-item"><a class="page-link" href="#page4" id="4">4</a></li>
+        <li class="page-item"><a class="page-link" href="#" id="5">5 </a></li>
+        <li class="page-item"><a class="page-link" href="#" id="6">6</a></li>
+        <li class="page-item"><a class="page-link" href="#" id="7">7</a></li>
+        <li class="page-item"><a class="page-link" href="#" id="8">8</a></li>
+        <li class="page-item"><a class="page-link" href="#" id="9">9</a></li>
+        <li class="page-item"><a class="page-link" href="#" id="10">10</a></li>
+        <li class="page-item"><a class="page-link" href="#" id="11">11</a></li>
+        <li class="page-item"><a class="page-link" href="#" id="12">12</a></li>
+        <li class="page-item"><a class="page-link" href="#" id="13">13</a></li>
+        <li class="page-item"><a class="page-link" href="#" id="14">14</a></li>
+        <li class="page-item"><a class="page-link" href="#" id="15">15</a></li>
+        <li class="page-item"><a class="page-link" href="#" id="16">16</a></li>
+        <li class="page-item"><a class="page-link" href="#" id="17">17</a></li>
+        <li class="page-item"><a class="page-link" href="#" id="18">18</a></li>
+        <li class="page-item"><a class="page-link" href="#" id="19">19</a></li>
+        <li class="page-item"><a class="page-link" href="#" id="20">20</a></li>
+        <li class="page-item"><a class="page-link" href="#" id="4">Next</a></li>
+      </ul>
+    </nav>
+
+    <div id="info" class="container">
+      <div class="row no-gutters"></div>
+    </div>
+  </section>
+  <!-- <script>
+      $("#demo").pagination({
+        dataSource: [1, 2, 3, 4, 5, 6, 7, ...100],
+        pageSize: 5,
+        showPrevious: false,
+        showNext: false,
+        callback: function(data, pagination) {
+          // template method of yourself
+          var html = template(data);
+          dataContainer.html(html);
+        }
+      });
+    </script> -->
+  <script>
+    $(document).ready(function () {
+      console.log('api key ' + config.api)
+      // let api = "?api_key=7312314f2520b88e7dc4d4fb21dc20f9";
+      let api = `?api_key=${config.api}`
+      let proxy = "https://cors-anywhere.herokuapp.com/";
+      let url = "https://api.themoviedb.org/3/";
+      let trending = "trending/all/day";
+      let now_playing = "movie/now_playing";
+      let popular = "movie/popular";
+      let top_rated = "movie/top_rated";
+      let upcoming = "movie/upcoming";
+      let latest = "movie/latest";
+      let tv_top_rated = "tv/top_rated";
+      let tv_popular = "tv/popular";
+      let tv_ontheair = "tv/on_the_air";
+      let tv_airing_today = "tv/airing_today";
+      let tv_latest = "tv/latest";
+      let page_no = "";
+      let request;
+      let photo = "";
+      let info;
+      $('#trending').click(function () {
+        request = proxy + url + trending + api;
+
+        callJson(request);
+        pageNo(trending)
+      })
+
+      $(".dropdown-item").click(function () {
+        info = $(this).attr("id");
+        if (info == "tv_popular") {
+          request = proxy + url + tv_popular + api;
+          callJson(request);
+          pageNo(tv_popular);
+        }
+        if (info == "tv_top_rated") {
+          request = proxy + url + tv_top_rated + api;
+          callJson(request);
+          pageNo(tv_top_rated);
+        }
+        if (info == "tv_latest") {
+          request = proxy + url + tv_latest + api;
+          callJson(request);
+          pageNo(tv_latest);
+        }
+        if (info == "tv_airing_today") {
+          request = proxy + url + tv_airing_today + api;
+          callJson(request);
+          pageNo(tv_airing_today);
+        }
+        if (info == "top_rated") {
+          request = proxy + url + top_rated + api;
+          callJson(request);
+          pageNo(top_rated);
+        }
+        if (info == "latest") {
+          request = proxy + url + latest + api;
+          callJson(request);
+          pageNo(latest);
+        }
+        if (info == "now_playing") {
+          request = proxy + url + now_playing + api;
+          callJson(request);
+          pageNo(now_playing);
+        }
+
+        if (info == "popular") {
+          request = proxy + url + popular + api;
+          callJson(request);
+          // console.log(request)
+          console.log(popular);
+          //makeRequest(popular,page_no)
+          pageNo(popular);
+        }
+      });
+
+      function pageNo(type) {
+        $(".page-link").click(function () {
+          page_no = $(this).attr("id");
+          //console.log(page_no);
+          page_no = `&page=${page_no}`;
+          if (true) {
+            $(".row").empty();
+
+            //makeRequest(type,page_no)
+          }
+          makeRequest(page_no, type);
+        });
+      }
+
+      // console.log(page_no);
+
+      function makeRequest(page_no, type) {
+        let page = page_no;
+        request = proxy + url + type + api + page_no;
+        // console.log(request);
+        callJson(request);
+      }
+      //  console.log(page_no);
+
+      //console.log(request);
+      //console.log(request);
+      function callJson(getResponse) {
+        let request = getResponse;
+        $.getJSON(request, function (data) {
+          $.each(data.results, function (index, movie) {
+            const image = "https://image.tmdb.org/t/p/w185";
+            const title = movie.title;
+            let movie_id = movie / movie.id;
+
+            const poster_path = image + movie.poster_path;
+
+            const img = `<div class = 'col m-2'>
+
+                <img src = ${poster_path}  id='image' class='rounded'>
+                
+                  ${movie.id}
+                </div> `;
+
+            photo = img;
+
+            //$("div .row").html(photo);
+
+            $("div .row").append(photo);
+          });
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
